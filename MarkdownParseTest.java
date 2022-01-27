@@ -19,10 +19,28 @@ public class MarkdownParseTest {
         assertEquals("https://something.com", links.get(0));
         assertEquals("some-page.html", links.get(1));
     }
+    @Test
+    public void getLinks2() throws IOException {
+        Path fileName = Path.of("breaking-test.md");
+	    String contents = Files.readString(fileName);
+        ArrayList<String> links = MarkdownParse.getLinks(contents);
+        assertEquals("www.gooog()le.com", links.get(0));
+    }
+
+    @Test
+    public void getLinks3() throws IOException {
+        Path fileName = Path.of("breaking-test_2.md");
+	    String contents = Files.readString(fileName);
+        ArrayList<String> links = MarkdownParse.getLinks(contents);
+        assertEquals("www.google.com\n[Lab Report 1](lab-report-1-week-2.html", links.get(0));
+    }
+
+    @Test
+    public void getLinks4() throws IOException {
+        Path fileName = Path.of("breaking-test_3.md");
+	    String contents = Files.readString(fileName);
+        ArrayList<String> links = MarkdownParse.getLinks(contents);
+        assertEquals(0, links.size());
+    }
 }
 
-/*
-Windows
-javac -cp ".;lib\junit-4.13.2.jar;lib\hamcrest-core-1.3.jar" MarkdownParseTest.java
-java -cp ".;lib/junit-4.13.2.jar;lib/hamcrest-core-1.3.jar" org.junit.runner.JUnitCore MarkdownParseTest
-*/
