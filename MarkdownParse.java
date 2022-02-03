@@ -20,13 +20,13 @@ public class MarkdownParse {
             int closeParen = markdown.indexOf(")", openParen);
             
             // If the link is an image file, continue
-            /*if(nextOpenBracket >= 1 && markdown.charAt(nextOpenBracket-1) == '!') {
+            if(nextOpenBracket >= 1 && markdown.charAt(nextOpenBracket-1) == '!') {
                 currentIndex = closeParen + 1;
                 continue;
             }
 
             // If the link is formatted incorrectly, continue
-            if(openParen != nextCloseBracket + 1) {
+            /*if(openParen != nextCloseBracket + 1) {
                 currentIndex = nextOpenBracket + 1;
                 continue;
             }*/
