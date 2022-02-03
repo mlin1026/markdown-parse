@@ -23,13 +23,13 @@ public class MarkdownParse {
             /*if(nextOpenBracket >= 1 && markdown.charAt(nextOpenBracket-1) == '!') {
                 currentIndex = closeParen + 1;
                 continue;
-            }*/
+            }
 
             // If the link is formatted incorrectly, continue
             if(openParen != nextCloseBracket + 1) {
                 currentIndex = nextOpenBracket + 1;
                 continue;
-            }
+            }*/
 
             if(closeParen==-1){
                 return toReturn;

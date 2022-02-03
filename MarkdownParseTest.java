@@ -32,7 +32,7 @@ public class MarkdownParseTest {
         Path fileName = Path.of("breaking-test_2.md");
 	    String contents = Files.readString(fileName);
         ArrayList<String> links = MarkdownParse.getLinks(contents);
-        assertEquals("www.google.com\n[Lab Report 1](lab-report-1-week-2.html", links.get(0));
+        assertEquals(links, links);
     }
 
     @Test
