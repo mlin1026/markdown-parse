@@ -22,17 +22,20 @@ public class MarkdownParseTest {
     @Test
     public void getLinks2() throws IOException {
         Path fileName = Path.of("breaking-test.md");
+        ArrayList<String> expect = new ArrayList<>();
+        expect.add("www.gooog()le.com");
 	    String contents = Files.readString(fileName);
         ArrayList<String> links = MarkdownParse.getLinks(contents);
-        assertEquals("www.gooog()le.com", links.get(0));
+        assertEquals(expect, links);
     }
 
     @Test
     public void getLinks3() throws IOException {
         Path fileName = Path.of("breaking-test_2.md");
 	    String contents = Files.readString(fileName);
+        ArrayList<String> result = MarkdownParse.getLinks(contents);;
         ArrayList<String> links = MarkdownParse.getLinks(contents);
-        assertEquals(links, links);
+        assertEquals(result, links);
     }
 
     @Test
