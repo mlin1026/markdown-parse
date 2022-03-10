@@ -17,7 +17,13 @@ public class MarkdownParse {
             }
             int nextCloseBracket = markdown.indexOf("]", nextOpenBracket);
             int openParen = markdown.indexOf("(", nextCloseBracket);
+            if(openParen == -1){
+                break;
+            }
             int closeParen = markdown.indexOf(")", openParen);
+            if(closeParen == -1){
+                break;
+            }
             
             // If the link is an image file, continue
             if(nextOpenBracket >= 1 && markdown.charAt(nextOpenBracket-1) == '!') {
