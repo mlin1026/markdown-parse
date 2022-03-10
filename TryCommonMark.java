@@ -45,7 +45,7 @@ class TryCommonMark {
         Node node = parser.parse("[a](google.com)");
         LinkCountVisitor visitor = new LinkCountVisitor();
         node.accept(visitor);
-        System.out.println(visitor.linkCount);
+        System.out.println(visitor.linkCount.get(0));
           // 1
     }
 }
