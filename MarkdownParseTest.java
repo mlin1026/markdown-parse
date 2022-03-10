@@ -58,6 +58,8 @@ public class MarkdownParseTest {
         Path fileName = Path.of("snippet_1.md");
 	    String contents = Files.readString(fileName);
         ArrayList<String> links = MarkdownParse.getLinks(contents);
+        ArrayList<String> expect = new ArrayList();
+        expect.add("`google.com");
         assertEquals("`google.com", links.get(0));
     }
 
